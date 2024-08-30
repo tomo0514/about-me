@@ -3,49 +3,91 @@
 html {
     font-size: 100%;
 }
-body{
+
+body {
     font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "BIZ UDPGothic", sans-serif;
     line-height: 1.7;
     color: #432;
 }
+
 a {
     text-decoration: none;
 }
+
 img {
     max-width: 100%;
+}
+
+/* アニメーション */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes colorChange {
+    from {
+        color: #432;
+    }
+    to {
+        color: #0bd;
+    }
 }
 
 /* レイアウト */
 .align-center {
     text-align: center;
 }
-/*見出し*/
+
+/* 見出し */
 .font-english {
     font-family: 'Philosopher', sans-serif;
     font-weight: normal;
 }
+
 .page-title,
 .heading-large,
 .heading-medium {
     font-size: 60px;
     text-align: center;
 }
+
 .page-title {
     margin-top: 30px;
     line-height: 1.4;
+    animation: fadeIn 1s ease-out;
 }
+
 .heading-large {
     margin-bottom: 1rem;
 }
 
 /* ヘッダー */
 .page-header {
-    padding-top: .5rem;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 1.5rem;
 }
+
 .logo {
     width: 210px;
 }
 
+.fade-in {
+    opacity: 0; /* 初期状態で非表示 */
+    transition: opacity 1s ease-in; /* フェードインのトランジションを設定 */
+}
+
+.show {
+    opacity: 1; /* 表示状態 */
+}
+
+/* ナビゲーション */
 .main-nav {
     display: flex;
     justify-content: center;
@@ -55,41 +97,38 @@ img {
     position: relative;
     top: 200px;
 }
+
 .main-nav a {
     color: #432;
     font-size: 1rem;
+    transition: color 0.3s ease;
 }
+
 .main-nav a:hover {
-    color: #0bd;
+    animation: colorChange 0.3s forwards;
 }
 
 h3 {
     font-size: 2rem;
 }
-/*背景*/
+
+/* 背景 */
 .cover {
     background-size: cover;
     background-position: center bottom;
     height: 1500px;
 }
 
-.cover-home{
+.cover-home {
     background-image: url(../img/haikei.png);
 }
 
-/*ヘッダー*/
-.page-header {
-    display: flex;
-    justify-content: space-between;
-    padding-top: 1.5rem;
-}
-
-
-/* デスクトップ版*/
-@media(min-width: 800px) {
+/* デスクトップ版 */
+@media (min-width: 800px) {
     .page-title {
-        font-size :5rem;
+        font-size: 5rem;
     }
+
     .heading-large {
         font-size: 4rem;
     }

@@ -94,6 +94,14 @@ h3 {
     background-color: #fff;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
+.fade-in {
+    opacity: 0; /* 初期状態で非表示 */
+    transition: opacity 1s ease-in; /* フェードインのトランジションを設定 */
+}
+
+.show {
+    opacity: 1; /* 表示状態 */
+}
 
 /* Food Section */
 .food-field {
